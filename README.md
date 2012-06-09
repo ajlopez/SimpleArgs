@@ -47,6 +47,11 @@ npm test
 
 TBD
 
+## To do
+
+- Invalid parameters
+- Show usage
+
 ## Contribution
 
 Feel free to [file issues](https://github.com/ajlopez/SimpleArgs) and submit
