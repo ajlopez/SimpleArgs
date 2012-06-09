@@ -18,7 +18,21 @@ var simpleargs = require('simpleargs');
 
 ## Usage
 
-TBD
+```js
+
+// define parameters, with short name, name, default value and description
+simpleargs.define('p','port',3000,'Port number')
+    .define('h','host','localhost', 'Host name/address')
+// define value to receive     
+    .defineValue('message', 'hello, world', 'Message to send');
+
+// if you call the program
+// node hello.js 'Hello, world' -p 4000 --host 'mydomain'        
+var options = simpleargs.process(process.argv);
+// then options is { message: 'Hello, world', port: 4000, host: 'mydomain' }
+
+
+```
 
 ## Development
 
