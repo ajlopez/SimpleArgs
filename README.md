@@ -1,6 +1,6 @@
 # SimpleArgs
 
-Simple Command Line Arguments processing, for Node.js.
+Simple Command Line Arguments process, for Node.js.
 
 ## Installation
 
