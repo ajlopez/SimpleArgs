@@ -52,6 +52,10 @@ TBD
 - Invalid parameters
 - Show usage
 
+## Versions
+
+- 0.0.1: Published
+
 ## Contribution
 
 Feel free to [file issues](https://github.com/ajlopez/SimpleArgs) and submit
