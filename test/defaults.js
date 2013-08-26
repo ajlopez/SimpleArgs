@@ -1,12 +1,13 @@
 
-var simpleargs = require('../'),
-    assert = require('assert');
-    
-simpleargs.define('p','port',3000,'Port number');
-simpleargs.define('h','host','localhost', 'Host name/address');
+var simpleargs = require('../');
 
-var options = simpleargs.process([]);
+exports['get defaults'] = function (test) {    
+    simpleargs.define('p','port',3000,'Port number');
+    simpleargs.define('h','host','localhost', 'Host name/address');
 
-assert.ok(options);
-assert.equal(options.port, 3000);
-assert.equal(options.host, 'localhost');
+    var options = simpleargs.process([]);
+
+    test.ok(options);
+    test.equal(options.port, 3000);
+    test.equal(options.host, 'localhost');
+}
