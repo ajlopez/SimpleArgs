@@ -18,20 +18,33 @@ var simpleargs = require('simpleargs');
 
 ## Usage
 
-```js
 
-// define parameters, with short name, name, default value and description
+```js
+var argv = simpleargs(process.argv.slice(2));
+console.dir(argv);
+```
+
+Invoking the above example
+```
+node example.js -p 3000 -host localhost
+{ p: 3000, host: 'localhost' }
+```
+
+Any additional argument without associated option goes to the `_` array property:
+```
+node example.js -p 3000 -host localhost hello world
+{ p: 3000, host: 'localhost', _: ['hello', 'world'] }
+```
+
+You can define options with short name, name, default value and description
+```js
 simpleargs.define('p','port',3000,'Port number')
     .define('h','host','localhost', 'Host name/address')
-// define value to receive     
-    .defineValue('message', 'hello, world', 'Message to send');
 
 // if you call the program
-// node hello.js 'Hello, world' -p 4000 --host 'mydomain'        
-var options = simpleargs.process(process.argv);
-// then options is { message: 'Hello, world', port: 4000, host: 'mydomain' }
-
-
+// node hello.js Hello world -p 4000 --host 'mydomain'        
+var options = simpleargs(process.argv.slice(2));
+// then options is { _: ['Hello', 'world'], port: 4000, host: 'mydomain' }
 ```
 
 ## Development
@@ -55,6 +68,7 @@ TBD
 ## Versions
 
 - 0.0.1: Published
+- 0.0.2: Work in progress. Inspired by [minimist](https://github.com/substack/minimist).
 
 ## Contribution
 
