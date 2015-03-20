@@ -38,3 +38,18 @@ exports['process values'] = function (test) {
     test.equal(options._[0], 'hello');
 }
 
+exports['define and process value with name'] = function (test) {    
+    simpleargs.define('p','port',3000,'Port number', { name: 'hostport' })
+        .define('h','host','localhost', 'Host name/address');
+
+    var options = simpleargs(['hello', '-p', '4000', '--host', 'mydomain']);
+
+    test.ok(options);
+    test.equal(options.hostport, 4000);
+    test.equal(options.host, 'mydomain');
+    test.ok(options._);
+    test.ok(Array.isArray(options._));
+    test.equal(options._.length, 1);
+    test.equal(options._[0], 'hello');
+}
+
