@@ -53,3 +53,29 @@ exports['define and process value with name'] = function (test) {
     test.equal(options._[0], 'hello');
 }
 
+exports['define and process flag'] = function (test) {    
+    simpleargs.define('x', 'exclusive', false, 'Exclusive flag', { flag: true });
+
+    var options = simpleargs(['hello', '-x']);
+
+    test.ok(options);
+    test.strictEqual(options.exclusive, true);
+    test.ok(options._);
+    test.ok(Array.isArray(options._));
+    test.equal(options._.length, 1);
+    test.equal(options._[0], 'hello');
+}
+
+exports['define and process flag with full name'] = function (test) {    
+    simpleargs.define('x', 'exclusive', false, 'Exclusive flag', { flag: true });
+
+    var options = simpleargs(['hello', '--exclusive']);
+
+    test.ok(options);
+    test.strictEqual(options.exclusive, true);
+    test.ok(options._);
+    test.ok(Array.isArray(options._));
+    test.equal(options._.length, 1);
+    test.equal(options._[0], 'hello');
+}
+
