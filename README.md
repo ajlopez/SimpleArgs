@@ -69,6 +69,7 @@ TBD
 
 - 0.0.1: Published
 - 0.0.2: Published. Inspired by [minimist](https://github.com/substack/minimist).
+- 0.0.3: Published. Flag support.
 
 ## Contribution
 

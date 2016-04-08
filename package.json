@@ -1,7 +1,7 @@
 { "name": "simpleargs"
 , "description": "Simple Arguments processing for Node.js"
 , "keywords": [ "arguments", "command line", "nodejs", "javascript" ]
-, "version": "0.0.2"
+, "version": "0.0.3"
 , "author": "Angel 'Java' Lopez <webmaster@ajlopez.com> (http://www.ajlopez.com)"
 , "repository": { "type": "git", "url": "git://github.com/ajlopez/SimpleArgs.git" }
 , "main": "./lib/simpleargs.js"
@@ -12,6 +12,6 @@
 , "dependencies": {
   }
 , "devDependencies": {
-    "simpleunit": "0.0.6"
+    "simpleunit": "0.0.7"
   }
 }
