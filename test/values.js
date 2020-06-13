@@ -1,10 +1,10 @@
 
-var simpleargs = require('../');
+const simpleargs = require('../');
 
 simpleargs.clear();
 
 exports['process undefined values'] = function (test) {    
-    var options = simpleargs(['hello', '-p', '4000', '--host', 'mydomain']);
+    const options = simpleargs(['hello', '-p', '4000', '--host', 'mydomain']);
 
     test.ok(options);
     test.equal(options.p, 4000);
@@ -16,7 +16,7 @@ exports['process undefined values'] = function (test) {
 }
 
 exports['process integer values'] = function (test) {    
-    var options = simpleargs(['-p', '4000', '--host', 'mydomain']);
+    const options = simpleargs(['-p', '4000', '--host', 'mydomain']);
 
     test.ok(options);
     test.strictEqual(options.p, 4000);
@@ -27,7 +27,7 @@ exports['process values'] = function (test) {
     simpleargs.define('p','port',3000,'Port number')
         .define('h','host','localhost', 'Host name/address');
 
-    var options = simpleargs(['hello', '-p', '4000', '--host', 'mydomain']);
+    const options = simpleargs(['hello', '-p', '4000', '--host', 'mydomain']);
 
     test.ok(options);
     test.equal(options.port, 4000);
@@ -42,7 +42,7 @@ exports['define and process value with name'] = function (test) {
     simpleargs.define('p','port',3000,'Port number', { name: 'hostport' })
         .define('h','host','localhost', 'Host name/address');
 
-    var options = simpleargs(['hello', '-p', '4000', '--host', 'mydomain']);
+    const options = simpleargs(['hello', '-p', '4000', '--host', 'mydomain']);
 
     test.ok(options);
     test.equal(options.hostport, 4000);
@@ -56,7 +56,7 @@ exports['define and process value with name'] = function (test) {
 exports['define and process flag'] = function (test) {    
     simpleargs.define('x', 'exclusive', false, 'Exclusive flag', { flag: true });
 
-    var options = simpleargs(['hello', '-x']);
+    const options = simpleargs(['hello', '-x']);
 
     test.ok(options);
     test.strictEqual(options.exclusive, true);
@@ -69,7 +69,7 @@ exports['define and process flag'] = function (test) {
 exports['define and process flag with full name'] = function (test) {    
     simpleargs.define('x', 'exclusive', false, 'Exclusive flag', { flag: true });
 
-    var options = simpleargs(['hello', '--exclusive']);
+    const options = simpleargs(['hello', '--exclusive']);
 
     test.ok(options);
     test.strictEqual(options.exclusive, true);
@@ -83,7 +83,7 @@ exports['define and process two consecutive flags'] = function (test) {
     simpleargs.define('x', 'exclusive', false, 'Exclusive flag', { flag: true })
         .define('z', 'zeta', false, 'Zeta flag', { flag: true });
 
-    var options = simpleargs(['hello', '-xz']);
+    const options = simpleargs(['hello', '-xz']);
 
     test.ok(options);
     test.strictEqual(options.exclusive, true);
