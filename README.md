@@ -71,6 +71,10 @@ TBD
 - 0.0.2: Published. Inspired by [minimist](https://github.com/substack/minimist).
 - 0.0.3: Published. Flag support.
 
+## References
+
+- [Using Feature Flags or Feature Toggles with Node.js](https://medium.com/swlh/using-feature-flags-or-feature-toggles-with-node-js-6bdb3a610f59)
+
 ## Contribution
 
 Feel free to [file issues](https://github.com/ajlopez/SimpleArgs) and submit
