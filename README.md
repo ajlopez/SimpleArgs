@@ -67,9 +67,10 @@ TBD
 
 ## Versions
 
-- 0.0.1: Published
-- 0.0.2: Published. Inspired by [minimist](https://github.com/substack/minimist).
-- 0.0.3: Published. Flag support.
+- 0.0.1: Initial version
+- 0.0.2: Inspired by [minimist](https://github.com/substack/minimist)
+- 0.0.3: Flag support
+- 0.0.4: Avoid parse big integers, returns them as strings
 
 ## References
 
