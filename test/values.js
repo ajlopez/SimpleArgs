@@ -94,4 +94,30 @@ exports['define and process two consecutive flags'] = function (test) {
     test.equal(options._[0], 'hello');
 }
 
+exports['process integer'] = function (test) {
+    const result = simpleargs([ '42' ]);
+    
+    test.ok(result);
+    test.ok(result._);
+    test.equal(result._.length, 1);
+    test.strictEqual(result._[0], 42);
+}
+
+exports['process big integer as string'] = function (test) {
+    const result = simpleargs([ '42000000000000000000' ]);
+    
+    test.ok(result);
+    test.ok(result._);
+    test.equal(result._.length, 1);
+    test.strictEqual(result._[0], '42000000000000000000');
+}
+
+exports['process integer with left zeroes as number'] = function (test) {
+    const result = simpleargs([ '00000000000000000001' ]);
+    
+    test.ok(result);
+    test.ok(result._);
+    test.equal(result._.length, 1);
+    test.strictEqual(result._[0], 1);
+}
 
