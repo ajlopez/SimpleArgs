@@ -71,6 +71,7 @@ TBD
 - 0.0.2: Inspired by [minimist](https://github.com/substack/minimist)
 - 0.0.3: Flag support
 - 0.0.4: Avoid parse big integers, returns them as strings
+- 0.0.5: When no arguments, returned `_` is an empty array 
 
 ## References
 
