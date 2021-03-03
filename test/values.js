@@ -15,6 +15,14 @@ exports['process undefined values'] = function (test) {
     test.equal(options._[0], 'hello');
 }
 
+exports['process no arguments'] = function (test) {    
+    const options = simpleargs([]);
+
+    test.ok(options._);
+    test.ok(Array.isArray(options._));
+    test.equal(options._.length, 0);
+}
+
 exports['process integer values'] = function (test) {    
     const options = simpleargs(['-p', '4000', '--host', 'mydomain']);
 
